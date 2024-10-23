@@ -1,7 +1,8 @@
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8650/audio/primary-hal
+PAL_HAL_DIR := hardware/qcom-caf/sm8650/audio/pal
 
 # Audio product definitions
-include $(AUDIO_HAL_DIR)/configs/kalama/audio-modules.mk
+include $(AUDIO_HAL_DIR)/configs/pineapple/audio-modules.mk
 PRODUCT_PACKAGES += $(AUDIO_MODULES)
 
 #BOARD_USES_GENERIC_AUDIO := true
@@ -135,7 +136,7 @@ QCV_FAMILY_SKUS := pineapple
 DEVICE_SKU := pineapple
 UV_WRAPPER2 := true
 
-CONFIG_PAL_SRC_DIR := $(call project-path-for,qcom-audio)/pal/configs/pineapple
+CONFIG_PAL_SRC_DIR := $(PAL_HAL_DIR)/configs/pineapple
 CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/pineapple
 CONFIG_SKU_OUT_DIR := $(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)
 
@@ -182,7 +183,7 @@ QCV_FAMILY_SKUS := cliffs
 DEVICE_SKU := cliffs
 UV_WRAPPER2 := true
 
-CONFIG_PAL_SRC_DIR := $(call project-path-for,qcom-audio)/pal/configs/pineapple
+CONFIG_PAL_SRC_DIR := $(PAL_HAL_DIR)/configs/pineapple
 CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/pineapple
 CONFIG_SKU_OUT_DIR := $(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)
 
